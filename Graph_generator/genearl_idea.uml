@@ -1,0 +1,18 @@
+@startuml
+
+
+
+skinparam packageStyle rectangle
+
+rectangle main {
+    - int main();
+
+}
+
+rectangle gerad.c {
+    
+}
+
+
+
+@enduml
