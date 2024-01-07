@@ -23,7 +23,7 @@ void sort_q(Node *head);
 void swap_values(Node *value1, Node *value2);
 //void remove_dublicates(Node *head, double value);
 //void insert_after_value();
-//Node *copy_list();
+Node *copy_list(Node *head);
 //Node *reverse_list();
 //Node *delete_first_match();
 //Node *delete_last_match();

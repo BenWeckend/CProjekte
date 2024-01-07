@@ -117,6 +117,24 @@ Node *node_at_pos(Node *head, int position){
     return head;
 }
 
+Node *copy_list(Node *head){
+    if(head == NULL) return NULL;
+    Node *new_head = calloc(1, sizeof(Node)), *head_node;
+    new_head->value = head->value;
+    head_node = new_head;
+    head = head->next;
+
+    while(head != NULL){
+        Node *new_node = calloc(1, sizeof(Node));
+        new_node->value = head->value;
+        new_head->next = new_node;
+
+        new_head = new_head->next;
+        head = head->next;
+    }
+    return head_node;
+}
+
 void sort_q(Node *head){
     int lenght = list_length(head);
     srand(time(NULL));
@@ -170,7 +188,7 @@ Node *delete_node(Node *head, int position){
 }
 
 double value_node(Node *head, int position){
-    if(head == NULL) return ;
+    if(head == NULL) fprintf(stderr, "Error: empty list");;
     if(position > list_length(head)) fprintf(stderr, "Error: position exceeds list");
 
     for(int current_pos=0; current_pos<position; current_pos++){
@@ -178,3 +196,4 @@ double value_node(Node *head, int position){
     }
     return head->value;
 }
+
