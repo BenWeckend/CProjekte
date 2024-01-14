@@ -24,7 +24,7 @@ void swap_values(Node *value1, Node *value2);
 //void remove_dublicates(Node *head, double value);
 //void insert_after_value();
 Node *copy_list(Node *head);
-//Node *reverse_list();
+Node *reverse_list(Node *head);
 //Node *delete_first_match();
 //Node *delete_last_match();
 //Node *delete_all_matches();

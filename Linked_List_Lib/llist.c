@@ -110,6 +110,22 @@ int value_at_pos(Node *head, int position){
     return head->value;
 }
 
+Node *reverse_list(Node *head){
+    if(head == NULL) return NULL;
+    if(head->next == NULL) return head;
+
+    Node *current = head, *next_node = head->next;
+    current->next = NULL;
+
+    while(next_node != NULL){
+        Node *buffer = next_node->next;
+        next_node->next = current;
+        current = next_node;
+        next_node = buffer;
+    }
+    return current;
+}
+
 Node *node_at_pos(Node *head, int position){
     for(int i=0; i<position; i++){
         head = head->next;
